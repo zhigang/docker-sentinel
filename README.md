@@ -4,13 +4,16 @@ A powerful flow control component enabling reliability, resilience and monitorin
 
 Learn more at: <https://github.com/alibaba/Sentinel>
 
-## Base Docker Image
-
-* openjdk:8-jre
-
 ## Versions
 
 * 1.7.2, latest
+
+## Login sentinel dashboard
+
+### Dafault Account
+
+* Username: `sentinel`
+* Password: `sentinel`
 
 ## Docker Command
 
@@ -26,7 +29,8 @@ docker pull siriuszg/sentinel-dashboard:TAG
 docker run -d -p 8080:8080 --name sentinel-dashboard siriuszg/sentinel-dashboard:TAG
 ```
 
-## Login sentinel dashboard
+use your own account with envioronment
 
-* Username: `sentinel`
-* Password: `sentinel`
+```bash
+docker run -d -p 8080:8080 --name sentinel-dashboard -e sentinel.dashboard.auth.username=admin -e sentinel.dashboard.auth.password=123456 siriuszg/sentinel-dashboard:TAG
+```
